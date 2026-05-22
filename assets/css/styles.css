@@ -305,6 +305,95 @@ footer {
 }
 
 /* ==========================================================================
+   Upcoming Events Section
+   ========================================================================== */
+.events-container {
+  max-width: var(--container-width);
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.events-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: var(--cm-charcoal);
+}
+
+.events-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.event-card {
+  position: relative;
+  display: block;
+  height: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--cm-light-grey);
+}
+
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover Zoom Effect */
+.event-card:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.event-date {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--cm-white);
+  color: var(--cm-charcoal);
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.event-title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--cm-magenta);
+  color: var(--cm-white);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* Desktop Grid Layout Override */
+@media (min-width: 786px) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+  }
+  
+  .card-large {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    height: 100%; /* Stretches across the 2 rows */
+  }
+}
+
+/* ==========================================================================
    Responsive (Mobile Settings)
    ========================================================================== */
 @media (max-width: 786px) {
