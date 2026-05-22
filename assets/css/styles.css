@@ -243,7 +243,7 @@ footer {
    Gallery & Carousel
    ========================================================================== */
 .gallery-container {
-    min-height: 600px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -464,6 +464,133 @@ footer {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+/* ==========================================================================
+   Get Involved Section
+   ========================================================================== */
+.get-involved-container {
+  max-width: var(--container-width);
+  margin: 60px auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.get-involved-image {
+  width: 100%;
+}
+
+.get-involved-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.get-involved-content {
+  width: 100%;
+  text-align: left;
+}
+
+.get-involved-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: var(--cm-charcoal);
+}
+
+.get-involved-content p {
+  font-size: 16px;
+  color: var(--cm-text-grey);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.read-more-btn {
+  display: inline-block;
+  color: var(--cm-magenta);
+  font-weight: 600;
+  text-decoration: none;
+  border-top: 2px solid var(--cm-magenta);
+  border-bottom: 2px solid var(--cm-magenta);
+  padding: 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.read-more-btn:hover {
+  color: var(--cm-charcoal);
+  border-color: var(--cm-charcoal);
+}
+
+/* Desktop 2-Column Override */
+@media (min-width: 786px) {
+  .get-involved-container {
+    flex-direction: row;
+    gap: 60px;
+  }
+  
+  .get-involved-image,
+  .get-involved-content {
+    flex: 1;
+  }
+}
+
+/* ==========================================================================
+   Sponsors / Partners Section
+   ========================================================================== */
+.sponsors-container {
+  margin: 60px auto;
+  text-align: center;
+}
+
+.sponsors-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: var(--cm-charcoal);
+}
+
+.sponsors-carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  /* Adds a smooth fade to the left and right edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.sponsors-track {
+  display: inline-flex;
+  gap: 80px;
+  align-items: center;
+  /* Adjust the 15s duration to make it slower or faster */
+  animation: scrollLogos 15s linear infinite;
+  padding-right: 80px; /* Must match the gap for a seamless jump */
+}
+
+.sponsors-track img {
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.sponsors-track img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
 
 /* ==========================================================================
    Responsive (Mobile Settings)
@@ -478,5 +605,6 @@ footer {
   .mobile-menu-btn {
     display: block;
   }
-  .events-container, .articles-container { padding: 0 16px; }
+  .events-container, .articles-container, .social-feed-container,
+  .get-involved-container { padding: 0 16px; }
 }
