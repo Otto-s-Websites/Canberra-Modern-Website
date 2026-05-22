@@ -62,17 +62,10 @@ header {
   padding: 0 40px;
 }
 
-/* Logo */
-.logo-badge {
-  display: flex;
-  font-family: var(--font-main);
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -1px;
+.logo {
+   width: auto;
+   height: 40px;
 }
-.logo-badge .c { color: var(--cm-magenta); }
-.logo-badge .m { color: #8ba7b8; } /* Matches your design's gradient/blue M */
-
 /* Desktop Nav */
 .desktop-nav {
   display: flex;
