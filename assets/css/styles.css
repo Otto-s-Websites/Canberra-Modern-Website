@@ -1,0 +1,20 @@
+/* ==========================================================================
+   CSS Variables & Reset
+   ========================================================================== */
+:root {
+  --cm-magenta: #e52b71;
+  --cm-magenta-dark: #c21e5c;
+  --cm-charcoal: #1a1a1a;
+  --cm-white: #ffffff;
+  --cm-light-grey: #f4f4f4;
+  --cm-text-grey: #555555;
+  --cm-border: #e0e0e0;
+  --font-main: 'Jost', sans-serif;
+  --container-width: 1200px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
