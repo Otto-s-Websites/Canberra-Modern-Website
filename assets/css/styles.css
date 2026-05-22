@@ -247,7 +247,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-text: center;
+  text-align:  center;
     flex-direction: column;
 }
 
@@ -280,16 +280,28 @@ footer {
 }
 
 .gallery-wrapper {
-  display: grid;
-  grid-template-rows: 300px;
-  grid-auto-flow: column;
-  grid-gap: 16px;
-  overflow: auto;
-  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+  cursor: grab;
+}
 
-  .gallery-wrapper img {
-    scroll-snap-align: center;
-  }
+.gallery-wrapper::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Chrome/Safari */
+}
+
+.gallery-wrapper:active {
+  cursor: grabbing; /* Changes cursor when user drags */
+}
+
+.gallery-wrapper img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  flex-shrink: 0; /* Prevents images from squishing */
+  pointer-events: none; /* Stops the default browser "ghost image" drag bug */
 }
 
 /* ==========================================================================
