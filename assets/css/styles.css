@@ -226,9 +226,23 @@ footer {
 }
 
 /* ==========================================================================
+   Hero Image Section
+   ========================================================================== */
+.hero-image-section {
+  width: 100%;
+  display: block;
+}
+
+.hero-image-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
    Responsive (Mobile Settings)
    ========================================================================== */
-@media (max-width: 900px) {
+@media (max-width: 786px) {
   .nav-container {
     padding: 0 20px;
   }
