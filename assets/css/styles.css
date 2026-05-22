@@ -593,6 +593,109 @@ footer {
 }
 
 /* ==========================================================================
+   Contact Us Section
+   ========================================================================== */
+.contact-container {
+  max-width: var(--container-width);
+  margin: 60px auto 100px auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-image {
+  width: 100%;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.contact-form-wrapper {
+  width: 100%;
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--cm-charcoal);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cm-charcoal);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--cm-light-grey);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--cm-charcoal);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--cm-magenta);
+}
+
+.submit-btn {
+  align-self: flex-end; /* Aligns button to the right like the mockup */
+  background: none;
+  border: none;
+  color: var(--cm-magenta);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 2px solid var(--cm-magenta);
+  padding: 4px 0;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+  color: var(--cm-charcoal);
+  border-bottom-color: var(--cm-charcoal);
+}
+
+/* Desktop 2-Column Override */
+@media (min-width: 786px) {
+  .contact-container {
+    flex-direction: row;
+    gap: 60px;
+  }
+  
+  .contact-image,
+  .contact-form-wrapper {
+    flex: 1;
+  }
+}
+
+/* ==========================================================================
    Responsive (Mobile Settings)
    ========================================================================== */
 @media (max-width: 786px) {
@@ -607,4 +710,15 @@ footer {
   }
   .events-container, .articles-container, .social-feed-container,
   .get-involved-container { padding: 0 16px; }
+  .contact-container { 
+    padding: 0;
+    border-radius: 0;
+ }
+ .contact-container img { 
+    padding: 0;
+    border-radius: 0;
+ }
+ .contact-form-wrapper {
+    padding: 0 16px;
+ }
 }
