@@ -18,3 +18,152 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: var(--font-main);
+  color: var(--cm-charcoal);
+  background-color: var(--cm-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+  background: var(--cm-white);
+  border-bottom: 1px solid var(--cm-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 40px;
+}
+
+/* Logo */
+.logo-badge {
+  display: flex;
+  font-family: var(--font-main);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.logo-badge .c { color: var(--cm-magenta); }
+.logo-badge .m { color: #8ba7b8; } /* Matches your design's gradient/blue M */
+
+/* Desktop Nav */
+.desktop-nav {
+  display: flex;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cm-charcoal);
+}
+.nav-links a:hover, 
+.nav-links a.active {
+  color: var(--cm-magenta);
+}
+
+/* Right Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.profile-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cm-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--cm-charcoal);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  background: var(--cm-magenta);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--cm-white);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-logo-circle {
+  width: 40px;
+  height: 40px;
+  background: var(--cm-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.footer-logo-circle .c { color: var(--cm-magenta); }
+.footer-logo-circle .m { color: #8ba7b8; }
+
+.footer-brand-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+}
+
+.footer-credit {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.footer-socials a:hover {
+  opacity: 0.8;
+}
