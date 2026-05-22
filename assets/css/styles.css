@@ -242,6 +242,15 @@ footer {
 /* ==========================================================================
    Gallery & Carousel
    ========================================================================== */
+.gallery-container {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-text: center;
+    flex-direction: column;
+}
+
 .gallery-section {
   width: 100vw;
   overflow: hidden;
