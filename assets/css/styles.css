@@ -394,6 +394,78 @@ footer {
 }
 
 /* ==========================================================================
+   Latest Articles Section
+   ========================================================================== */
+.articles-container {
+  max-width: var(--container-width);
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.articles-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: var(--cm-charcoal);
+}
+
+.articles-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.article-img-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.article-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-img-wrapper img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.article-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--cm-charcoal);
+}
+
+.article-excerpt {
+  font-size: 14px;
+  color: var(--cm-text-grey);
+  line-height: 1.5;
+}
+
+/* Desktop Grid Override */
+@media (min-width: 786px) {
+  .articles-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
    Responsive (Mobile Settings)
    ========================================================================== */
 @media (max-width: 786px) {
@@ -406,5 +478,5 @@ footer {
   .mobile-menu-btn {
     display: block;
   }
-  .events-container { padding: 0 16px; }
+  .events-container, .articles-container { padding: 0 16px; }
 }
