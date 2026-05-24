@@ -688,20 +688,19 @@ footer {
    About Page - Hero Section
    ========================================================================== */
 .about-hero {
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-}
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* Forces both columns to be the exact same height */
+    gap: 0; /* Removes the invisible wall between columns */
+  }
 
-.about-hero-content {
-  padding: 80px 40px; 
-  border-left: 20px solid var(--cm-magenta); 
-  display: flex;
-  flex-direction: column; 
-  text-align: left; 
-  align-items: flex-start; 
-  justify-content: center;
-}
+  .about-hero-content {
+    flex: 1;
+    padding-right: 40px; /* Gives the text room to breathe away from the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the text */
+  }
 
 .about-hero-content h1 {
   font-size: 48px;
@@ -720,17 +719,16 @@ footer {
 }
 
 .about-hero-image {
-  width: 100%;
-  object-fit: fill;
-}
+    flex: 1.2; /* Makes the image slightly wider than the text, adjust as needed */
+  }
 
-.about-hero-image img {
-  width: 100%;
-  height: 350px; 
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
+  .about-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center; /* Pins the image hard to the left edge */
+    display: block;
+  }
 
 
 /* Desktop Override */
