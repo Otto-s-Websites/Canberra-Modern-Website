@@ -20,6 +20,67 @@ closeBtn.addEventListener('click', () => {
    Gallery Auto-Scroll & Drag Logic
    ========================================================================== */
 
+   /* ==========================================================================
+   Gallery Auto-Scroll & Drag Logic
+   ========================================================================== */
+const gallery = document.querySelector('.gallery-wrapper');
+
+// 1. Clone the images so it looks infinite
+gallery.innerHTML += gallery.innerHTML;
+
+let isDown = false;
+let startX;
+let scrollLeft;
+let autoScrollTimer;
+
+// 2. Auto-scroll logic
+const startAutoScroll = () => {
+  autoScrollTimer = setInterval(() => {
+    gallery.scrollLeft += 1; // Change this number to adjust speed
+    // If scrolled past the first set of images, snap back to start silently
+    if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
+      gallery.scrollLeft = 0;
+    }
+  }, 20);
+};
+
+const stopAutoScroll = () => clearInterval(autoScrollTimer);
+
+// Start scrolling immediately
+startAutoScroll();
+
+// 3. Mouse Drag logic
+gallery.addEventListener('mousedown', (e) => {
+  isDown = true;
+  stopAutoScroll(); // Pause auto-scroll when user clicks
+  startX = e.pageX - gallery.offsetLeft;
+  scrollLeft = gallery.scrollLeft;
+});
+
+gallery.addEventListener('mouseleave', () => {
+  if (isDown) {
+    isDown = false;
+    startAutoScroll();
+  }
+});
+
+gallery.addEventListener('mouseup', () => {
+  isDown = false;
+  startAutoScroll(); // Resume auto-scroll when user lets go
+});
+
+gallery.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - gallery.offsetLeft;
+  const walk = (x - startX) * 2; // The * 2 makes it scroll faster than the mouse moves
+  gallery.scrollLeft = scrollLeft - walk;
+});
+
+   /* ==========================================================================
+   Canberra's modern Gallery
+   ========================================================================== */
+
 const mainGallery = document.getElementById('cmMainGallery');
 const thumbGallery = document.getElementById('cmThumbGallery');
 
@@ -60,3 +121,27 @@ if (mainGallery && thumbGallery) {
     });
   }
 }
+
+// ==========================================================================
+// Events Page Accordion
+// ==========================================================================
+const festBtns = document.querySelectorAll('.ep-fest-btn');
+
+festBtns.forEach(btn => {
+  btn.addEventListener('click', function() {
+    const card = this.closest('.ep-fest-card');
+    const moreText = card.querySelector('.ep-more-text');
+    const icon = this.querySelector('i');
+    const btnText = this.querySelector('span');
+
+    moreText.classList.toggle('show');
+    
+    if (moreText.classList.contains('show')) {
+      icon.classList.replace('fa-plus', 'fa-minus');
+      btnText.textContent = 'SHOW LESS';
+    } else {
+      icon.classList.replace('fa-minus', 'fa-plus');
+      btnText.textContent = 'SHOW MORE';
+    }
+  });
+});
