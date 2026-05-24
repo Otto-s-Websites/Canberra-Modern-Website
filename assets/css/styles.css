@@ -684,24 +684,31 @@ footer {
 .about-hero {
   display: flex;
   flex-direction: column;
-  border-left: 20px solid var(--cm-magenta);
-  min-height: 400px;
-  overflow: hidden;
+  background-color: transparent;
 }
 
 .about-hero-content {
-  padding: 40px;
+  padding: 80px 40px; 
+  border-left: 20px solid var(--cm-magenta); /* Border next to text only on mobile */
   display: flex;
   align-items: center;
-  flex-direction: column;
-  text-align: left;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: center; flex-direction: column; text-align: left; align-items: flex-start; justify-content: center;
+}
+
+.about-hero-content h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--cm-charcoal);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .about-hero-content span {
   font-size: 24px;
   font-weight: 600;
+  display: block;
+  margin-top: 5px; /* Natural spacing matching the design */
 }
 
 .about-hero-image {
@@ -710,22 +717,25 @@ footer {
 
 .about-hero-image img {
   width: 100%;
-  height: 100%;
+  height: 350px; /* Restricts mobile height for a landscape crop */
   object-fit: cover;
-  object-position: left center;
+  object-position: center;
   display: block;
 }
+
 
 /* Desktop Override */
 @media (min-width: 786px) {
   .about-hero {
     flex-direction: row;
-    border-left: 40px solid var(--cm-magenta);
+    border-left: 40px solid var(--cm-magenta); /* Border returns to full height */
+    min-height: 400px;
   }
 
   .about-hero-content {
     flex: 1;
     padding: 0 0 0 60px;
+    border-left: none; /* Removes double border */
   }
 
   .about-hero-content h1 {
@@ -734,6 +744,7 @@ footer {
 
   .about-hero-content span {
     font-size: 36px;
+    margin-top: -10px;
   }
 
   .about-hero-image {
@@ -741,8 +752,11 @@ footer {
     display: flex;
     justify-content: flex-end;
   }
-}
 
+  .about-hero-image img {
+    height: 100%; /* Adapts to desktop layout */
+  }
+}
 /* ==========================================================================
    Responsive (Mobile Settings)
    ========================================================================== */
