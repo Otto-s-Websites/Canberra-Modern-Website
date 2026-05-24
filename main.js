@@ -19,56 +19,44 @@ closeBtn.addEventListener('click', () => {
 /* ==========================================================================
    Gallery Auto-Scroll & Drag Logic
    ========================================================================== */
-const gallery = document.querySelector('.gallery-wrapper');
 
-// 1. Clone the images so it looks infinite
-gallery.innerHTML += gallery.innerHTML;
+const mainGallery = document.getElementById('cmMainGallery');
+const thumbGallery = document.getElementById('cmThumbGallery');
 
-let isDown = false;
-let startX;
-let scrollLeft;
-let autoScrollTimer;
+// Only run this code if the galleries actually exist on the current page
+if (mainGallery && thumbGallery) {
+  const thumbs = thumbGallery.querySelectorAll('img');
+  const prevBtn = document.querySelector('.prev-arrow');
+  const nextBtn = document.querySelector('.next-arrow');
 
-// 2. Auto-scroll logic
-const startAutoScroll = () => {
-  autoScrollTimer = setInterval(() => {
-    gallery.scrollLeft += 1; // Change this number to adjust speed
-    // If scrolled past the first set of images, snap back to start silently
-    if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
-      gallery.scrollLeft = 0;
-    }
-  }, 20);
-};
+  // Click a thumbnail to scroll main gallery
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {``
+      // Remove active state from all
+      thumbs.forEach(t => t.classList.remove('active-thumb'));
+      // Add active state to clicked thumb
+      thumb.classList.add('active-thumb');
+      
+      // Scroll the main gallery to match the clicked image
+      const mainImages = mainGallery.querySelectorAll('img');
+      if (mainImages[index]) {
+        mainImages[index].scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'nearest', 
+          inline: 'center' 
+        });
+      }
+    });
+  });
 
-const stopAutoScroll = () => clearInterval(autoScrollTimer);
-
-// Start scrolling immediately
-startAutoScroll();
-
-// 3. Mouse Drag logic
-gallery.addEventListener('mousedown', (e) => {
-  isDown = true;
-  stopAutoScroll(); // Pause auto-scroll when user clicks
-  startX = e.pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
-});
-
-gallery.addEventListener('mouseleave', () => {
-  if (isDown) {
-    isDown = false;
-    startAutoScroll();
+  // Arrow buttons to scroll the thumbnail strip
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      thumbGallery.scrollBy({ left: -150, behavior: 'smooth' });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      thumbGallery.scrollBy({ left: 150, behavior: 'smooth' });
+    });
   }
-});
-
-gallery.addEventListener('mouseup', () => {
-  isDown = false;
-  startAutoScroll(); // Resume auto-scroll when user lets go
-});
-
-gallery.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 2; // The * 2 makes it scroll faster than the mouse moves
-  gallery.scrollLeft = scrollLeft - walk;
-});
+}
