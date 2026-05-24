@@ -29,6 +29,7 @@ body {
   background-color: var(--cm-white);
   line-height: 1.6;
   overflow-x: hidden;
+  border-radius: 8px;
 }
 
 a {
@@ -41,6 +42,9 @@ ul {
   list-style: none;
 }
 
+img {
+  border-radius: 8px;
+}
 /* ==========================================================================
    Global Button Styles
    ========================================================================== */
@@ -54,11 +58,15 @@ ul {
   padding: 12px 32px;
   font-weight: 600;
   transition: all 0.2s ease;
+  border-radius: 8px;
+
 }
 
 .cta-btn:hover {
   background: var(--cm-magenta);
   color: var(--cm-white);
+  border-radius: 8px;
+
 }
 
 /* ==========================================================================
