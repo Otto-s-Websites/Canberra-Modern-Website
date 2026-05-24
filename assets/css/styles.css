@@ -42,6 +42,26 @@ ul {
 }
 
 /* ==========================================================================
+   Global Button Styles
+   ========================================================================== */
+.cta-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: var(--cm-white);
+  color: var(--cm-magenta);
+  border: 2px solid var(--cm-magenta);
+  padding: 12px 32px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: var(--cm-magenta);
+  color: var(--cm-white);
+}
+
+/* ==========================================================================
    Header & Navigation
    ========================================================================== */
 header {
@@ -469,7 +489,7 @@ footer {
    ========================================================================== */
 .get-involved-container {
   max-width: var(--container-width);
-  margin: 60px auto;
+  margin: 100px auto;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
@@ -495,7 +515,7 @@ footer {
 }
 
 .get-involved-title {
-  font-size: 24px;
+  font-size: 4em;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -509,23 +529,6 @@ footer {
   line-height: 1.6;
 }
 
-.read-more-btn {
-  display: inline-block;
-  color: var(--cm-magenta);
-  font-weight: 600;
-  text-decoration: none;
-  border-top: 2px solid var(--cm-magenta);
-  border-bottom: 2px solid var(--cm-magenta);
-  padding: 12px 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.2s ease;
-}
-
-.read-more-btn:hover {
-  color: var(--cm-charcoal);
-  border-color: var(--cm-charcoal);
-}
 
 /* Desktop 2-Column Override */
 @media (min-width: 786px) {
@@ -597,7 +600,7 @@ footer {
    ========================================================================== */
 .contact-container {
   max-width: var(--container-width);
-  margin: 60px auto 100px auto;
+  margin: 100px auto;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
@@ -662,26 +665,6 @@ footer {
   outline: 2px solid var(--cm-magenta);
 }
 
-.submit-btn {
-  align-self: flex-end; /* Aligns button to the right like the mockup */
-  background: none;
-  border: none;
-  color: var(--cm-magenta);
-  font-family: var(--font-main);
-  font-weight: 600;
-  font-size: 16px;
-  border-bottom: 2px solid var(--cm-magenta);
-  padding: 4px 0;
-  margin-top: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.submit-btn:hover {
-  color: var(--cm-charcoal);
-  border-bottom-color: var(--cm-charcoal);
-}
-
 /* Desktop 2-Column Override */
 @media (min-width: 786px) {
   .contact-container {
@@ -721,4 +704,8 @@ footer {
  .contact-form-wrapper {
     padding: 0 16px;
  }
+
+ .get-involved-title {
+  font-size: 3em;
+}
 }
