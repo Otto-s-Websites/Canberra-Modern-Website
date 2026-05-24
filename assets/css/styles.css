@@ -974,11 +974,11 @@ footer {
   overflow-x: auto;
   padding: 0 40px;
   margin-bottom: 16px;
-  scrollbar-width: none; /* Hides scrollbar Firefox */
+  scrollbar-width: none;
 }
 
 .cm-gallery-main::-webkit-scrollbar {
-  display: none; /* Hides scrollbar Chrome/Safari */
+  display: none;
 }
 
 .cm-gallery-main img {
@@ -1003,6 +1003,7 @@ footer {
   border: none;
   width: 60px;
   height: 80px;
+  padding: 0 8px;
   display: flex;
   align-items: center;
   justify-content: center;
