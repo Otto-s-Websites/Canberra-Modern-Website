@@ -691,8 +691,10 @@ footer {
   padding: 80px 40px; 
   border-left: 20px solid var(--cm-magenta); /* Border next to text only on mobile */
   display: flex;
-  align-items: center;
-  align-items: center; flex-direction: column; text-align: left; align-items: flex-start; justify-content: center;
+  flex-direction: column; 
+  text-align: left; 
+  align-items: flex-start; 
+  justify-content: center;
 }
 
 .about-hero-content h1 {
@@ -755,6 +757,147 @@ footer {
 
   .about-hero-image img {
     height: 100%; /* Adapts to desktop layout */
+  }
+}
+
+/* ==========================================================================
+   About Page - What's So Special Section
+   ========================================================================== */
+.about-special-section {
+  max-width: var(--container-width);
+  margin: 80px auto;
+  padding: 0 16px;
+}
+
+.special-top-row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.special-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cm-charcoal);
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.special-content p,
+.special-bottom-row p {
+  font-size: 16px;
+  color: var(--cm-text-grey);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.special-image {
+  width: 100%;
+}
+
+.special-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Desktop Override */
+@media (min-width: 786px) {
+  .special-top-row {
+    flex-direction: row;
+    gap: 60px;
+  }
+  
+  .special-content,
+  .special-image {
+    flex: 1;
+  }
+}
+/* ==========================================================================
+   About Page - Who Are Canberra Modern Section
+   ========================================================================== */
+.about-team-section {
+  max-width: var(--container-width);
+  margin: 80px auto;
+  padding: 0 16px;
+}
+
+.team-intro-row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+.team-image {
+  width: 100%;
+}
+
+.team-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.team-intro-content {
+  width: 100%;
+}
+
+.team-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cm-charcoal);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.team-intro-content p {
+  font-size: 16px;
+  color: var(--cm-text-grey);
+  line-height: 1.6;
+}
+
+.team-members-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.team-member h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cm-charcoal);
+  margin-bottom: 16px;
+  display: inline-block;
+  border-bottom: 2px solid var(--cm-magenta);
+  padding-bottom: 4px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: var(--cm-text-grey);
+  line-height: 1.6;
+}
+
+/* Desktop Override */
+@media (min-width: 786px) {
+  .team-intro-row {
+    flex-direction: row;
+    gap: 60px;
+  }
+  
+  .team-image,
+  .team-intro-content {
+    flex: 1;
+  }
+
+  .team-members-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px; /* Space between columns */
   }
 }
 /* ==========================================================================
