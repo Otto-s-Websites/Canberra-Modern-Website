@@ -1,6 +1,6 @@
 # Canberra Modern | Responsive Website
 
-**Live Website:** [Canberra Modern Website](https://otto-s-websites.github.io/Canberra-Modern-Website)
+**Live Website:** <a href="https://otto-s-websites.github.io/Canberra-Modern-Website" target="_blank" rel="noopener noreferrer">Canberra Modern Website</a>
 
 *![Canberra Modern Cover](assets/images/canberra-modern-cover.png)*
 
