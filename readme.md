@@ -1,4 +1,4 @@
-# Canberra Modern | Project Rationale
+# Canberra Modern | Responsive Website
 
 **Live Website:** [Canberra Modern Website](https://otto-s-websites.github.io/Canberra-Modern-Website)
 
